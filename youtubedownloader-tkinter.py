@@ -44,24 +44,20 @@ def download_mp4():
         output_string.set("For some reason we can't download this MP3.")
 
 
-# Creating Window
 window = ttk.Window(themename='journal')
 window.title('YouTube Downloader')
 window.geometry('600x400')
 
-# Title Label
 title_label = ttk.Label(master=window,
                         text='YouTube Downloader',
                         font='Candara 44')
 title_label.pack()
 
-# URL Label
 url_label = ttk.Label(master=window,
                       text='Enter the URL here:',
                       font='Candara 18')
 url_label.pack(pady=15)
 
-# URL Entry
 url = StringVar(value='URL')
 url_entry = ttk.Entry(master=window,
                       textvariable=url,
@@ -69,39 +65,31 @@ url_entry = ttk.Entry(master=window,
                       width=50)
 url_entry.pack()
 
-# Search Video Button
 search_button = ttk.Button(master=window,
                            text='Search URL',
                            command=search_btn)
 search_button.pack(pady=15)
 
-# Output Label
 out_label = ttk.Label(master=window,
                       text='The video to download is:',
                       font='Candara 14')
 out_label.pack()
 
-# Output
 output_string = StringVar(value='')
 output_label = ttk.Label(master=window,
                          font='Candara 14 italic',
                          textvariable=output_string)
 output_label.pack(pady=5)
 
-# Audio Button
 audio_button = ttk.Button(master=window,
                           text='Download MP3',
                           command=download_mp3)
 
-# Video Button
 video_button = ttk.Button(master=window,
                           text='Download MP4',
                           command=download_mp4)
 
-# Packing Buttons and download output
 audio_button.pack(side='left', padx=130)
 video_button.pack(side='left')
 
-
-# Running Window
 window.mainloop()
